@@ -5,3 +5,7 @@ export { TestimonialCard } from './TestimonialCard';
 export { FloatingActionButtons } from './FloatingActionButton';
 export { AnimatedPets } from './AnimatedPets';
 export { FloatingElements } from './FloatingElements';
+export { CreativeMapSection } from './CreativeMapSection';
+export { BoneButton } from './BoneButton';
+export { CreativeServiceCard } from './CreativeServiceCard';
+export { CreativeTestimonialCard } from './CreativeTestimonialCard';

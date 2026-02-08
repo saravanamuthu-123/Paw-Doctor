@@ -3,7 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { PawButton, ServiceCard, TestimonialCard, AnimatedPets } from '@/components/custom';
+import { PawButton, CreativeServiceCard, CreativeTestimonialCard, AnimatedPets, BoneButton } from '@/components/custom';
 import { FloatingElements } from '@/components/custom/FloatingElements';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
@@ -384,7 +384,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {featuredServices.map((service, index) => (
-              <ServiceCard
+              <CreativeServiceCard
                 key={service.id}
                 {...service}
               />
@@ -504,7 +504,7 @@ export default function Home() {
               {testimonials.map((testimonial) => (
                 <CarouselItem key={testimonial.id} className="md:basis-1/2 lg:basis-1/3">
                   <div className="p-2">
-                    <TestimonialCard {...testimonial} />
+                    <CreativeTestimonialCard {...testimonial} />
                   </div>
                 </CarouselItem>
               ))}

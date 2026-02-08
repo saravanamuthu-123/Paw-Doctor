@@ -13,7 +13,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { PawButton } from '@/components/custom';
+import { PawButton, CreativeMapSection } from '@/components/custom';
 import { FloatingElements } from '@/components/custom/FloatingElements';
 import { MapPin, Phone, Mail, Clock, Send, CheckCircle } from 'lucide-react';
 import clinicInfo from '@/data/clinic-info.json';
@@ -166,7 +166,15 @@ export default function ContactPage() {
       {/* Contact Form and Map */}
       <section className="py-20 bg-gradient-to-br from-[#F5F7FA] to-white">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 max-w-7xl mx-auto">
+          <Badge className="bg-[#FF6B7A] text-white mb-8 px-6 py-2">Send us a message & find us</Badge>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 text-center">
+            We'd Love to Hear from You
+          </h2>
+          <p className="text-gray-600 mb-12 text-center max-w-2xl mx-auto">
+            Fill out the form below and we'll get back to you as soon as possible, or visit us at our clinic.
+          </p>
+
+          <div className="grid lg:grid-cols-2 gap-12 max-w-7xl mx-auto mb-12">
             {/* Contact Form */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -174,14 +182,6 @@ export default function ContactPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <Badge className="bg-[#FF6B7A] text-white mb-4">Send us a message</Badge>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                We'd Love to Hear from You
-              </h2>
-              <p className="text-gray-600 mb-8">
-                Fill out the form below and we'll get back to you as soon as possible.
-              </p>
-
               <Card className="glass border-none">
                 <CardContent className="p-8">
                   {isSubmitted && (
@@ -192,7 +192,7 @@ export default function ContactPage() {
                     >
                       <CheckCircle className="w-5 h-5 text-[#7B4397]" />
                       <p className="text-sm text-gray-700">
-                        Thanks! We'll get back to you within 24 hours 🐾
+                        Thanks! We'll get back to you within 24 hours
                       </p>
                     </motion.div>
                   )}
@@ -337,49 +337,8 @@ export default function ContactPage() {
               </Card>
             </motion.div>
 
-            {/* Map */}
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="space-y-6"
-            >
-              <Badge className="bg-[#FF6B7A] text-white mb-4">Find Us</Badge>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                Visit Our Clinic
-              </h2>
-              <p className="text-gray-600 mb-8">
-                Located in {clinicInfo.address.area}, {clinicInfo.address.city}, we're easily accessible from all parts of the city.
-              </p>
-
-              {/* Google Maps Embed */}
-              <Card className="glass border-none overflow-hidden h-[400px]">
-                <iframe
-                  src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.3!2d76.9!3d11.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTHCsDAwJzAwLjAiTiA3NsKwNTQnMDAuMCJF!5e0!3m2!1sen!2sin!4v1234567890`}
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Lifecare Pet Specialty Clinic Location"
-                />
-              </Card>
-
-              {/* Directions */}
-              <Card className="glass border-none">
-                <CardContent className="p-6">
-                  <h3 className="font-bold text-gray-900 mb-3">Getting Here</h3>
-                  <p className="text-sm text-gray-600 mb-4">
-                    We're located on {clinicInfo.address.street}, near major landmarks in {clinicInfo.address.area}. Ample parking space is available for visitors.
-                  </p>
-                  <PawButton variant="outline" size="sm" href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(clinicInfo.address.street + ' ' + clinicInfo.address.area + ' ' + clinicInfo.address.city)}`}>
-                    Get Directions
-                  </PawButton>
-                </CardContent>
-              </Card>
-            </motion.div>
+            {/* Creative Map Section */}
+            <CreativeMapSection />
           </div>
         </div>
       </section>

@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { PawButton, ServiceCard } from '@/components/custom';
+import { PawButton, CreativeServiceCard, BoneButton } from '@/components/custom';
 import { FloatingElements } from '@/components/custom/FloatingElements';
 import { CheckCircle2, Phone } from 'lucide-react';
 import services from '@/data/services.json';
@@ -87,7 +87,7 @@ export default function ServicesPage() {
           {/* Services Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredServices.map((service, index) => (
-              <ServiceCard key={service.id} {...service} />
+              <CreativeServiceCard key={service.id} {...service} />
             ))}
           </div>
         </div>
