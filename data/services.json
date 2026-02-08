@@ -1,0 +1,251 @@
+[
+  {
+    "id": "general-consultation",
+    "name": "General Consultation",
+    "category": "General Services",
+    "icon": "stethoscope",
+    "shortDescription": "Comprehensive health checkups and routine examinations for your pets.",
+    "description": "Our general consultation services provide thorough health assessments for your pets. Our experienced veterinarians conduct detailed physical examinations, discuss your pet's behavior and diet, and address any health concerns you may have. Whether it's a routine checkup or you've noticed something unusual about your pet, we're here to help.",
+    "features": [
+      "Complete physical examination",
+      "Health history review",
+      "Nutrition and diet counseling",
+      "Behavior assessment",
+      "Preventive care recommendations"
+    ]
+  },
+  {
+    "id": "vaccination",
+    "name": "Vaccination & Preventive Care",
+    "category": "Preventive Care",
+    "icon": "syringe",
+    "shortDescription": "Protect your pets with essential vaccinations and preventive healthcare.",
+    "description": "Prevention is the best medicine. Our vaccination program protects your pets from serious diseases including rabies, distemper, parvovirus, and more. We follow internationally recognized vaccination schedules tailored to your pet's age, lifestyle, and risk factors.",
+    "features": [
+      "Core and non-core vaccinations",
+      "Puppy and kitten vaccination series",
+      "Annual booster shots",
+      "Parasite prevention (fleas, ticks, heartworm)",
+      "Vaccination certificates and records"
+    ]
+  },
+  {
+    "id": "surgery",
+    "name": "Surgery & Critical Care",
+    "category": "Specialized Care",
+    "icon": "activity",
+    "shortDescription": "Advanced surgical procedures with state-of-the-art equipment and expert care.",
+    "description": "Our surgical suite is equipped with modern technology to perform a wide range of procedures from routine spay/neuter operations to complex surgeries. All surgeries are performed under anesthesia with continuous monitoring to ensure your pet's safety.",
+    "features": [
+      "Soft tissue surgery",
+      "Spay and neuter procedures",
+      "Emergency surgery",
+      "Advanced anesthesia monitoring",
+      "Post-operative care and pain management"
+    ]
+  },
+  {
+    "id": "diagnostics",
+    "name": "Diagnostics Laboratory",
+    "category": "Diagnostic Services",
+    "icon": "microscope",
+    "shortDescription": "Comprehensive diagnostic services including X-ray, ultrasound, and lab tests.",
+    "description": "Our in-house diagnostic laboratory allows us to quickly and accurately diagnose your pet's condition. From blood work to imaging, we have the tools to provide answers when your pet needs them most.",
+    "features": [
+      "Digital X-ray imaging",
+      "Ultrasound examinations",
+      "Complete blood count (CBC)",
+      "Biochemistry profiles",
+      "Urinalysis and fecal testing",
+      "Cytology and histopathology"
+    ]
+  },
+  {
+    "id": "cardiology",
+    "name": "Cardiology",
+    "category": "Specialized Care",
+    "icon": "heart-pulse",
+    "shortDescription": "Expert cardiac care for pets with heart conditions.",
+    "description": "Our cardiology services focus on the diagnosis and treatment of heart diseases in pets. Using advanced diagnostic tools including ECG and echocardiography, we can detect and manage various cardiac conditions.",
+    "features": [
+      "Electrocardiography (ECG/EKG)",
+      "Echocardiography",
+      "Blood pressure monitoring",
+      "Heart disease management",
+      "Cardiac emergency care"
+    ]
+  },
+  {
+    "id": "orthopedics",
+    "name": "Orthopedics",
+    "category": "Specialized Care",
+    "icon": "bone",
+    "shortDescription": "Treatment for bone, joint, and ligament injuries and conditions.",
+    "description": "Our orthopedic services address musculoskeletal problems including fractures, arthritis, hip dysplasia, and ligament injuries. We offer both surgical and non-surgical treatment options.",
+    "features": [
+      "Fracture repair",
+      "Cruciate ligament surgery",
+      "Hip dysplasia treatment",
+      "Arthritis management",
+      "Joint supplements and therapy"
+    ]
+  },
+  {
+    "id": "dentistry",
+    "name": "Dentistry",
+    "category": "General Services",
+    "icon": "smile",
+    "shortDescription": "Complete dental care for healthy teeth and gums.",
+    "description": "Dental health is crucial for your pet's overall wellbeing. We provide comprehensive dental services including cleanings, extractions, and treatment of oral diseases.",
+    "features": [
+      "Dental examinations",
+      "Professional teeth cleaning",
+      "Tooth extractions",
+      "Oral surgery",
+      "Dental X-rays",
+      "Home dental care guidance"
+    ]
+  },
+  {
+    "id": "dermatology",
+    "name": "Dermatology",
+    "category": "Specialized Care",
+    "icon": "sparkles",
+    "shortDescription": "Treatment for skin, coat, and ear conditions.",
+    "description": "Skin problems can make your pet miserable. Our dermatology services diagnose and treat allergies, infections, parasites, and other skin conditions that affect your pet's comfort and quality of life.",
+    "features": [
+      "Allergy testing and treatment",
+      "Skin infection management",
+      "Ear disease treatment",
+      "Hot spot treatment",
+      "Medicated baths",
+      "Nutritional dermatology"
+    ]
+  },
+  {
+    "id": "ophthalmology",
+    "name": "Ophthalmology",
+    "category": "Specialized Care",
+    "icon": "eye",
+    "shortDescription": "Comprehensive eye care and treatment for vision problems.",
+    "description": "Eye problems require specialized care. Our ophthalmology services include diagnosis and treatment of cataracts, glaucoma, corneal ulcers, and other eye conditions.",
+    "features": [
+      "Eye examinations",
+      "Treatment of eye infections",
+      "Glaucoma management",
+      "Cataract evaluation",
+      "Corneal ulcer treatment",
+      "Eye surgery"
+    ]
+  },
+  {
+    "id": "neurology",
+    "name": "Neurology",
+    "category": "Specialized Care",
+    "icon": "brain",
+    "shortDescription": "Diagnosis and treatment of neurological disorders.",
+    "description": "Neurological problems can be frightening for both pets and owners. We diagnose and treat conditions affecting the brain, spinal cord, and nervous system.",
+    "features": [
+      "Seizure management",
+      "Intervertebral disc disease treatment",
+      "Neurological examinations",
+      "Treatment of vestibular disease",
+      "Pain management for neurological conditions"
+    ]
+  },
+  {
+    "id": "oncology",
+    "name": "Oncology",
+    "category": "Specialized Care",
+    "icon": "shield-plus",
+    "shortDescription": "Compassionate cancer care and treatment options.",
+    "description": "A cancer diagnosis is difficult, but we're here to help. Our oncology services include diagnosis, staging, and treatment planning for pets with cancer.",
+    "features": [
+      "Cancer diagnosis and staging",
+      "Chemotherapy",
+      "Tumor removal surgery",
+      "Palliative care",
+      "Pain management",
+      "Quality of life assessment"
+    ]
+  },
+  {
+    "id": "exotic-care",
+    "name": "Avian & Exotic Care",
+    "category": "Specialized Care",
+    "icon": "bird",
+    "shortDescription": "Specialized care for birds, rabbits, reptiles, and exotic pets.",
+    "description": "Exotic pets have unique healthcare needs. Our veterinarians have experience treating birds, rabbits, guinea pigs, reptiles, and other exotic animals.",
+    "features": [
+      "Avian health examinations",
+      "Reptile care",
+      "Small mammal medicine",
+      "Exotic pet surgery",
+      "Dietary counseling for exotic species",
+      "Habitat and husbandry advice"
+    ]
+  },
+  {
+    "id": "grooming",
+    "name": "Grooming & Wellness",
+    "category": "Wellness Services",
+    "icon": "scissors",
+    "shortDescription": "Professional grooming services to keep your pet looking and feeling great.",
+    "description": "Regular grooming is essential for your pet's health and comfort. Our professional groomers provide gentle, stress-free grooming services.",
+    "features": [
+      "Bathing and blow-drying",
+      "Hair cutting and styling",
+      "Nail trimming",
+      "Ear cleaning",
+      "Anal gland expression",
+      "De-shedding treatments"
+    ]
+  },
+  {
+    "id": "boarding",
+    "name": "Boarding Services",
+    "category": "Wellness Services",
+    "icon": "home",
+    "shortDescription": "Safe and comfortable boarding with 24/7 supervision.",
+    "description": "When you can't be with your pet, trust us to provide a safe, comfortable, and fun environment. Our boarding facility offers climate-controlled kennels and individual attention.",
+    "features": [
+      "Climate-controlled accommodations",
+      "Individual attention and playtime",
+      "Medication administration",
+      "Special dietary needs",
+      "24/7 monitoring",
+      "Daily photo updates"
+    ]
+  },
+  {
+    "id": "nutrition",
+    "name": "Nutrition Counseling",
+    "category": "Wellness Services",
+    "icon": "apple",
+    "shortDescription": "Expert guidance on proper nutrition for optimal health.",
+    "description": "Proper nutrition is fundamental to your pet's health. Our veterinarians provide personalized dietary recommendations based on your pet's age, breed, health status, and lifestyle.",
+    "features": [
+      "Diet evaluation and planning",
+      "Weight management programs",
+      "Prescription diets for medical conditions",
+      "Supplement recommendations",
+      "Feeding behavior counseling"
+    ]
+  },
+  {
+    "id": "rehabilitation",
+    "name": "Rehabilitation & Physiotherapy",
+    "category": "Wellness Services",
+    "icon": "activity",
+    "shortDescription": "Physical therapy to aid recovery and improve mobility.",
+    "description": "Physical rehabilitation helps pets recover from surgery, injury, or illness. Our therapy programs are designed to reduce pain, improve mobility, and enhance quality of life.",
+    "features": [
+      "Post-surgical rehabilitation",
+      "Arthritis management",
+      "Weight loss programs",
+      "Hydrotherapy",
+      "Therapeutic exercises",
+      "Pain management"
+    ]
+  }
+]

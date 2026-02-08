@@ -1,0 +1,78 @@
+{
+  "name": "Lifecare Pet Specialty Clinic",
+  "tagline": "Healing Paws, Happy Hearts",
+  "description": "Trusted by thousands of pet parents across Coimbatore for comprehensive veterinary services. Our multi-specialty team is equipped to handle everything from wellness checkups to critical emergencies all under one roof.",
+  "mission": "To provide compassionate, comprehensive veterinary care that enhances the quality of life for pets and peace of mind for their owners.",
+  "vision": "To be the most trusted and innovative veterinary clinic in Coimbatore, setting the standard for exceptional pet healthcare.",
+  "values": [
+    "Compassion and empathy in every interaction",
+    "Excellence in medical care and service",
+    "Integrity and transparency with our clients",
+    "Continuous learning and innovation",
+    "Community engagement and education"
+  ],
+  "address": {
+    "street": "4 Rukkammal Colony",
+    "area": "Thudiyalur",
+    "city": "Coimbatore",
+    "state": "Tamil Nadu",
+    "pincode": "641034",
+    "country": "India"
+  },
+  "contact": {
+    "phone": "+91 90879 90819",
+    "emergencyPhone": "+91 90879 90819",
+    "email": "info@lifecarepetclinic.com",
+    "whatsapp": "+91 90879 90819"
+  },
+  "hours": {
+    "weekdays": "Mon - Sun | 24 hours",
+    "emergency": "24/7 Emergency Service Available"
+  },
+  "social": {
+    "facebook": "https://facebook.com/lifecarepetclinic",
+    "instagram": "https://instagram.com/lifecarepetclinic",
+    "twitter": "https://twitter.com/lifecarepetclinic",
+    "youtube": "https://youtube.com/@lifecarepetclinic"
+  },
+  "stats": {
+    "yearsOfExperience": 10,
+    "vets": 8,
+    "successfulTreatments": 15000,
+    "happyClients": 5000
+  },
+  "facilities": [
+    {
+      "name": "24/7 ICU Availability",
+      "description": "State-of-the-art intensive care unit with round-the-clock monitoring for critical patients."
+    },
+    {
+      "name": "Isolation Ward",
+      "description": "Dedicated isolation facilities for pets with contagious conditions to ensure safe treatment."
+    },
+    {
+      "name": "In-house Laboratory",
+      "description": "Advanced diagnostic laboratory for quick and accurate test results."
+    },
+    {
+      "name": "Imaging Facilities",
+      "description": "Digital X-ray and ultrasound equipment for comprehensive diagnostic imaging."
+    },
+    {
+      "name": "Modern Surgery Suites",
+      "description": "Fully equipped surgical theaters with advanced anesthesia monitoring systems."
+    },
+    {
+      "name": "In-house Pharmacy",
+      "description": "Complete pharmacy stocked with all necessary medications and supplements."
+    },
+    {
+      "name": "Comfortable Boarding",
+      "description": "Clean, spacious kennels with climate control for overnight stays and boarding."
+    },
+    {
+      "name": "Ambulance Service",
+      "description": "Emergency ambulance service available 24/7 for quick transportation."
+    }
+  ]
+}
