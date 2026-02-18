@@ -11,8 +11,8 @@ export const CreativeMapSection: React.FC = () => {
   // Map URLs centered on coordinates - no default marker so custom paw icon is the only marker
   const { latitude, longitude } = clinicInfo.location;
   const mapUrls = {
-    roadmap: `https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3914.856!2d${longitude}!3d${latitude}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f17!5e0!3m2!1sen!2sin!4v${Date.now()}`,
-    satellite: `https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3914.856!2d${longitude}!3d${latitude}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f17!5e1!3m2!1sen!2sin!4v${Date.now()}`
+    roadmap: `https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3914.856!2d${longitude}!3d${latitude}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f17!5e0!3m2!1sen!2sin`,
+    satellite: `https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3914.856!2d${longitude}!3d${latitude}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f17!5e1!3m2!1sen!2sin`
   };
 
   return (

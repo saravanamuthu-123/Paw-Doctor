@@ -63,9 +63,9 @@ export default function ContactPage() {
         message: data.message,
       };
 
-      const scriptUrl = process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL;
+      const scriptUrl = clinicInfo.integrations.googleScriptUrl;
 
-      if (!scriptUrl) {
+      if (!scriptUrl || scriptUrl === 'YOUR_GOOGLE_SCRIPT_URL_HERE') {
         throw new Error('Google Script URL is not configured');
       }
 

@@ -13,6 +13,7 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
+  type CarouselApi,
 } from '@/components/ui/carousel';
 import { Clock, Award, Heart, Shield, Phone, Activity, Dog, Cat, Bird, Footprints } from 'lucide-react';
 import clinicInfo from '@/data/clinic-info.json';
@@ -21,6 +22,17 @@ import testimonials from '@/data/testimonials.json';
 
 export default function Home() {
   const featuredServices = services.slice(0, 6);
+  const [heroCarouselApi, setHeroCarouselApi] = React.useState<CarouselApi>();
+
+  React.useEffect(() => {
+    if (!heroCarouselApi) return;
+
+    const autoplay = setInterval(() => {
+      heroCarouselApi.scrollNext();
+    }, 5000);
+
+    return () => clearInterval(autoplay);
+  }, [heroCarouselApi]);
 
   return (
      <div className="min-h-screen overflow-x-hidden">
@@ -178,12 +190,13 @@ export default function Home() {
 
                 {/* CTA Buttons */}
                 <motion.div
-                  className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-8"
+                  className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start items-center mb-8"
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.6 }}
                 >
                   <motion.div
+                    className="origin-center"
                     whileHover={{ scale: 1.05, y: -5 }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
@@ -192,6 +205,7 @@ export default function Home() {
                     </PawButton>
                   </motion.div>
                   <motion.div
+                    className="origin-center"
                     whileHover={{ scale: 1.05, y: -5 }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
@@ -207,7 +221,7 @@ export default function Home() {
                 </motion.div>
               </div>
 
-              {/* Right Side - Hero Image */}
+              {/* Right Side - Hero Image Carousel */}
               <motion.div
                 className="relative order-2 lg:order-2"
                 initial={{ opacity: 0, x: 50 }}
@@ -215,28 +229,56 @@ export default function Home() {
                 transition={{ duration: 0.8, delay: 0.3 }}
               >
                 <div className="relative">
-                  {/* Main Hero Image with Frame */}
-                  <motion.div
-                    className="relative rounded-3xl overflow-hidden shadow-2xl"
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ duration: 0.3 }}
+                  {/* Hero Image Carousel */}
+                  <Carousel
+                    setApi={setHeroCarouselApi}
+                    opts={{
+                      align: "center",
+                      loop: true,
+                    }}
+                    className="w-full"
                   >
-                    <div className="aspect-square relative">
-                      <Image
-                        src="/images/herosection.png"
-                        alt="Lifecare Pet Clinic - Compassionate Care"
-                        fill
-                        className="object-cover"
-                        priority
-                      />
-                      {/* Gradient Overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#FF6B7A]/10 via-transparent to-[#FDB913]/10 pointer-events-none" />
-                    </div>
-                  </motion.div>
+                    <CarouselContent>
+                      {[
+                        { src: '/images/hero-dog-2.png', alt: 'Lifecare Pet Clinic - Compassionate Care' },
+                        { src: '/images/hero-main-1.png', alt: 'Your Pet\'s Health Partner' },
+                        { src: '/images/hero-dog-1.png', alt: 'Expert Veterinary Care' },
+                        { src: '/images/hero-tre-1.png', alt: 'Modern Emergency Healthcare' },
+                        { src: '/images/hero-brids-1.png', alt: 'Modern Pet Healthcare' },
+                      ].map((image, index) => (
+                        <CarouselItem key={index}>
+                          <motion.div
+                            className="relative rounded-3xl overflow-hidden"
+                            whileHover={{ scale: 1.02 }}
+                            transition={{ duration: 0.3 }}
+                          >
+                            <div className="relative w-full h-[360px] md:h-[430px] lg:h-[520px]">
+                              <Image
+                                src={image.src}
+                                alt={image.alt}
+                                fill
+                                className="object-cover"
+                                priority={index === 0}
+                              />
+                              {/* Fade overlay on all 4 edges */}
+                              {/* Left edge fade */}
+                              <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-[#F5F7FA]/30 to-transparent pointer-events-none" />
+                              {/* Right edge fade */}
+                              <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-[#F5F7FA]/30 to-transparent pointer-events-none" />
+                              {/* Top edge fade */}
+                              <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-[#F5F7FA]/30 to-transparent pointer-events-none" />
+                              {/* Bottom edge fade */}
+                              <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#F5F7FA]/30 to-transparent pointer-events-none" />
+                            </div>
+                          </motion.div>
+                        </CarouselItem>
+                      ))}
+                    </CarouselContent>
+                  </Carousel>
 
                   {/* Decorative Elements Around Image */}
                   <motion.div
-                    className="absolute -bottom-6 -left-6 w-24 h-24 rounded-full bg-gradient-to-br from-[#FF6B7A] to-[#e55566] flex items-center justify-center shadow-xl"
+                    className="absolute -bottom-6 -left-6 w-24 h-24 rounded-full bg-gradient-to-br from-[#FF6B7A] to-[#e55566] flex items-center justify-center shadow-xl z-10"
                     animate={{ rotate: 360 }}
                     transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                   >
@@ -244,7 +286,7 @@ export default function Home() {
                   </motion.div>
 
                   <motion.div
-                    className="absolute -top-6 -right-6 w-20 h-20 rounded-full bg-gradient-to-br from-[#FDB913] to-[#e5a40f] flex items-center justify-center shadow-xl"
+                    className="absolute -top-6 -right-6 w-20 h-20 rounded-full bg-gradient-to-br from-[#FDB913] to-[#e5a40f] flex items-center justify-center shadow-xl z-10"
                     animate={{ rotate: -360 }}
                     transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
                   >
@@ -340,6 +382,7 @@ export default function Home() {
             </motion.div>
 
             <motion.div
+              className="text-center md:text-left"
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -355,9 +398,11 @@ export default function Home() {
               <p className="text-gray-600 leading-relaxed mb-8">
                 With over {clinicInfo.stats.yearsOfExperience} years of experience and a team of {clinicInfo.stats.vets}+ expert veterinarians, we provide comprehensive healthcare services for your pets. Our state-of-the-art facility is equipped with modern diagnostic and treatment equipment to ensure the best possible care.
               </p>
-              <PawButton variant="outline" href="/about">
-                Learn More About Us
-              </PawButton>
+              <div className="flex justify-center md:justify-start">
+                <PawButton variant="outline" href="/about">
+                  Learn More About Us
+                </PawButton>
+              </div>
             </motion.div>
           </div>
         </div>
