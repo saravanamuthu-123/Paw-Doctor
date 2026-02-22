@@ -47,7 +47,7 @@ export const Header: React.FC = () => {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 md:gap-3 group flex-shrink-0">
             <motion.div
-              className="relative w-12 h-12 md:w-16 md:h-16 flex-shrink-0 flex items-center justify-center"
+              className="relative w-16 h-16 md:w-16 md:h-16 flex-shrink-0 flex items-center justify-center"
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
               style={{ marginTop: '2px' }}
