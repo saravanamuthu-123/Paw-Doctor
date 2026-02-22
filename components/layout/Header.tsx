@@ -172,12 +172,17 @@ export const Header: React.FC = () => {
                       className="object-contain"
                     />
                   </div>
-                  <SheetTitle className="text-2xl font-bold text-gray-900 mb-2">
-                    {clinicInfo.name.split(' ').slice(0, 2).join(' ')}
+                  <SheetTitle className="sr-only">
+                    {clinicInfo.name}
                   </SheetTitle>
-                  <p className="text-sm text-[#FF6B7A] font-semibold">
-                    {clinicInfo.tagline}
-                  </p>
+                  <Image
+                    src="/images/logo-text.svg"
+                    alt="Lifecare Pet - Healing Paws, Happy Hearts"
+                    width={200}
+                    height={50}
+                    className="object-contain"
+                    priority
+                  />
                 </div>
 
                 {navLinks.map((link, index) => {
