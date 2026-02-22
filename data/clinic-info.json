@@ -34,8 +34,7 @@
     "whatsapp": "+91 93428 93438"
   },
   "hours": {
-    "weekdays": "Mon - Sun | 24 hours",
-    "emergency": "24/7 Emergency Service Available"
+    "weekdays": "Mon - Sun | 9Am - 10Pm"
   },
   "social": {
     "instagram": "https://instagram.com/lifecarepetspecialityclinic"
@@ -48,7 +47,7 @@
   },
   "facilities": [
     {
-      "name": "24/7 ICU Availability",
+      "name": "ICU Availability",
       "description": "State-of-the-art intensive care unit with round-the-clock monitoring for critical patients."
     },
     {
@@ -77,7 +76,7 @@
     },
     {
       "name": "Ambulance Service",
-      "description": "Emergency ambulance service available 24/7 for quick transportation."
+      "description": "Emergency ambulance service available for quick transportation."
     }
   ],
   "integrations": {

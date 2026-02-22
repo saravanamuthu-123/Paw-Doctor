@@ -525,7 +525,7 @@ export default function ContactPage() {
               Need Immediate Assistance?
             </h2>
             <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
-              For pet emergencies, call our ambulance service immediately. Our 24/7 emergency team is always ready to help.
+              For pet emergencies, call our ambulance service immediately.
             </p>
             <motion.a
               href={`tel:${clinicInfo.contact.ambulance}`}
