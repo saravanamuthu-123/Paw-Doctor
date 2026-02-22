@@ -178,9 +178,6 @@ export const Footer: React.FC = () => {
                 <Clock className="w-5 h-5 text-[#FF6B7A] flex-shrink-0 mt-0.5" />
                 <div className="text-gray-400">
                   <p>{clinicInfo.hours.weekdays}</p>
-                  <p className="text-[#7B4397] font-semibold mt-1">
-                    {clinicInfo.hours.emergency}
-                  </p>
                 </div>
               </li>
             </ul>
