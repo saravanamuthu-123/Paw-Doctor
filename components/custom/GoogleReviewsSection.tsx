@@ -10,6 +10,7 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
+  type CarouselApi,
 } from '@/components/ui/carousel';
 import { Star, ExternalLink } from 'lucide-react';
 import { GoogleReviewCard, type GoogleReview } from './GoogleReviewCard';
@@ -58,6 +59,27 @@ export const GoogleReviewsSection: React.FC = () => {
   const [bio, setBio] = useState<GoogleReviewsBio | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [carouselApi, setCarouselApi] = useState<CarouselApi>();
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [slideCount, setSlideCount] = useState(0);
+
+  useEffect(() => {
+    if (!carouselApi) return;
+
+    const onSelect = () => {
+      setCurrentSlide(carouselApi.selectedScrollSnap());
+      setSlideCount(carouselApi.scrollSnapList().length);
+    };
+
+    onSelect();
+    carouselApi.on('select', onSelect);
+    carouselApi.on('reInit', onSelect);
+
+    return () => {
+      carouselApi.off('select', onSelect);
+      carouselApi.off('reInit', onSelect);
+    };
+  }, [carouselApi]);
 
   useEffect(() => {
     const fetchReviews = async () => {
@@ -187,29 +209,52 @@ export const GoogleReviewsSection: React.FC = () => {
 
         {/* Reviews Carousel */}
         {!loading && !error && reviews.length > 0 && (
-          <Carousel
-            opts={{
-              align: "start",
-              loop: true,
-            }}
-            className="w-full max-w-6xl mx-auto"
-          >
-            <CarouselContent>
-              {reviews.map((review) => (
-                <CarouselItem key={review.id} className="md:basis-1/2 lg:basis-1/3">
-                  <div className="p-2 h-full">
-                    <GoogleReviewCard
-                      review={review}
-                      clinicName={bio?.name}
-                      clinicLink={bio?.link}
-                    />
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
-          </Carousel>
+          <div className="relative">
+            <Carousel
+              setApi={setCarouselApi}
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              className="w-full max-w-6xl mx-auto"
+            >
+              <CarouselContent>
+                {reviews.map((review) => (
+                  <CarouselItem key={review.id} className="md:basis-1/2 lg:basis-1/3">
+                    <div className="p-2 h-full">
+                      <GoogleReviewCard
+                        review={review}
+                        clinicName={bio?.name}
+                        clinicLink={bio?.link}
+                      />
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+
+              {/* Arrow buttons — visible on all screens, positioned inside the carousel */}
+              <CarouselPrevious className="-left-3 md:-left-12 size-9 md:size-8 bg-white shadow-lg border-gray-200 hover:bg-gray-50" />
+              <CarouselNext className="-right-3 md:-right-12 size-9 md:size-8 bg-white shadow-lg border-gray-200 hover:bg-gray-50" />
+            </Carousel>
+
+            {/* Dot indicators for mobile */}
+            {slideCount > 1 && (
+              <div className="flex justify-center gap-1.5 mt-6 md:hidden">
+                {Array.from({ length: slideCount }).map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => carouselApi?.scrollTo(i)}
+                    className={`rounded-full transition-all duration-300 ${
+                      i === currentSlide
+                        ? 'w-6 h-2 bg-[#FF6B7A]'
+                        : 'w-2 h-2 bg-gray-300 hover:bg-gray-400'
+                    }`}
+                    aria-label={`Go to slide ${i + 1}`}
+                  />
+                ))}
+              </div>
+            )}
+          </div>
         )}
 
         {/* Write a Review CTA */}
